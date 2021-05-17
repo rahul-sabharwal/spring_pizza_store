@@ -1,12 +1,12 @@
-package com.demo.pizzastore.Converter;
+package com.demo.pizzastore.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 
-import com.demo.pizzastore.Domain.SideDish;
-import com.demo.pizzastore.Dto.SideDishDto;
+import com.demo.pizzastore.domain.SideDish;
+import com.demo.pizzastore.dto.SideDishDto;
 
 public class SideDishConverter {
 

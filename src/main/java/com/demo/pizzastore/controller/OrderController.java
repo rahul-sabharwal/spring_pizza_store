@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Controller;
+package com.demo.pizzastore.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.pizzastore.Domain.Order;
-import com.demo.pizzastore.Service.OrderService;
+import com.demo.pizzastore.domain.Order;
+import com.demo.pizzastore.service.OrderService;
 
 
 @RestController

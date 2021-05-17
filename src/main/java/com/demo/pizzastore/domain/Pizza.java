@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Domain;
+package com.demo.pizzastore.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="pizza_table")
-public class Pizza extends Item{
+public class Pizza extends Item {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,9 +1,9 @@
-package com.demo.pizzastore.Repository;
+package com.demo.pizzastore.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.demo.pizzastore.Domain.SideDish;
+import com.demo.pizzastore.domain.SideDish;
 
 
 @Repository

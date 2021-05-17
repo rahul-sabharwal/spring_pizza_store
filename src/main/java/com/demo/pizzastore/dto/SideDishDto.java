@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Dto;
+package com.demo.pizzastore.dto;
 
 import lombok.Data;
 

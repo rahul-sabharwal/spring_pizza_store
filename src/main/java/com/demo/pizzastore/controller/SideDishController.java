@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Controller;
+package com.demo.pizzastore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.pizzastore.Domain.SideDish;
-import com.demo.pizzastore.Service.SideDishService;
+import com.demo.pizzastore.domain.SideDish;
+import com.demo.pizzastore.service.SideDishService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Service;
+package com.demo.pizzastore.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.pizzastore.Domain.Item;
-import com.demo.pizzastore.Domain.Pizza;
-import com.demo.pizzastore.Repository.PizzaRepo;
+import com.demo.pizzastore.domain.Item;
+import com.demo.pizzastore.domain.Pizza;
+import com.demo.pizzastore.repository.PizzaRepo;
 
 
 @Service

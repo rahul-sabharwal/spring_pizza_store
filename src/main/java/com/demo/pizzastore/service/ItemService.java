@@ -1,11 +1,11 @@
-package com.demo.pizzastore.Service;
+package com.demo.pizzastore.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.pizzastore.Domain.Item;
+import com.demo.pizzastore.domain.Item;
 
 
 @Service

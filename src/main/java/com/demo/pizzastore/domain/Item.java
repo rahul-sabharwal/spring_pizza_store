@@ -1,6 +1,7 @@
-package com.demo.pizzastore.Domain;
+package com.demo.pizzastore.domain;
 
 public abstract class Item {
+	
 	private ItemType itemType;
 	
 	protected Item() {}

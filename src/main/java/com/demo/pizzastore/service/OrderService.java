@@ -1,12 +1,12 @@
-package com.demo.pizzastore.Service;
+package com.demo.pizzastore.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.pizzastore.Domain.Order;
-import com.demo.pizzastore.Repository.OrderRepo;
+import com.demo.pizzastore.domain.Order;
+import com.demo.pizzastore.repository.OrderRepo;
 
 
 

@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Converter;
+package com.demo.pizzastore.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.demo.pizzastore.Domain.Pizza;
-import com.demo.pizzastore.Dto.PizzaDto;
+import com.demo.pizzastore.domain.Pizza;
+import com.demo.pizzastore.dto.PizzaDto;
 
 @Component
 public class PizzaConverter {

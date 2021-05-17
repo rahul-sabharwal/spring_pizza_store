@@ -1,11 +1,12 @@
-package com.demo.pizzastore.Service;
+package com.demo.pizzastore.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.demo.pizzastore.Domain.Item;
-import com.demo.pizzastore.Domain.SideDish;
-import com.demo.pizzastore.Repository.SideDishRepo;
+import com.demo.pizzastore.domain.Item;
+import com.demo.pizzastore.domain.SideDish;
+import com.demo.pizzastore.repository.SideDishRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

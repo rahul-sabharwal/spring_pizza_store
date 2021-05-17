@@ -1,4 +1,4 @@
-package com.demo.pizzastore.Domain;
+package com.demo.pizzastore.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +28,11 @@ public class Order {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="pizza_fk", referencedColumnName = "id")
-	List<Pizza> pizza = new ArrayList<>();
+	private List<Pizza> pizza = new ArrayList<>();
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="sd_fk", referencedColumnName = "id")
-	List<SideDish> sideDish = new ArrayList<>();
+	private List<SideDish> sideDish = new ArrayList<>();
 	
 	
 	public Order() {
