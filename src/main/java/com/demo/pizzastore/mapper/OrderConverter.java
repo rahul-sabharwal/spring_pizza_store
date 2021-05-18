@@ -2,39 +2,36 @@ package com.demo.pizzastore.mapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.demo.pizzastore.domain.Order;
+import com.demo.pizzastore.dto.ItemDto;
 import com.demo.pizzastore.dto.OrderDto;
 
 @Component
 public class OrderConverter {
 	
-//	public OrderDto entityToDto(Order order) {
-//		ModelMapper mapper =new ModelMapper();
-//		OrderDto dto = mapper.map(order, OrderDto.class);
-//		return dto;
-//	}
+	@Autowired
+	private ItemMapper converter;
 	
-//	public List<OrderDto> entityToDto(List<Order> order){
-//		return order.stream().map(i->entityToDto(i)).collect(Collectors.toList());
-//	}
-//	
-//	public Order dtoToEntity(OrderDto dto) {
-//		ModelMapper mapper = new ModelMapper();
-//		Order order = mapper.map(dto, Order.class);
-//		return order;
-//	}
-//	
-//	public List<Order> dtoToEntity(List<OrderDto> order){
-//		return order.stream().map(i->dtoToEntity(i)).collect(Collectors.toList());
-//	}
-	
-	public OrderDto toDto(Order order){
+	public OrderDto toDto(Order order) {
 		OrderDto dto = new OrderDto();
-		dto.setId(order.getId());
+		List<ItemDto> sditemDto = converter.toDto(order.getSideDish());
+		List<ItemDto> pitemDto = converter.toItemDto(order.getPizza());
+		List<ItemDto> itemDto = Stream.concat(sditemDto.stream(), pitemDto.stream())
+                .collect(Collectors.toList());
 		dto.setCustomerName(order.getCustomerName());
+		dto.setItems(itemDto);
+		dto.setId(order.getId());
+		return dto;
 	}
+	
+	public List<OrderDto> toDto(List<Order> order){
+		return order.stream().map(this::toDto).collect(Collectors.toList());
+	}
+	
+	
 }

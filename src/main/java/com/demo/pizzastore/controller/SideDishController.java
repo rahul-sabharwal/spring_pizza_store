@@ -15,34 +15,34 @@ import com.demo.pizzastore.service.SideDishService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/sidedish")
 public class SideDishController {
 	
 	@Autowired
 	private SideDishService sdService;
 	
 	//	get pizza
-	@GetMapping("sidedish")
+	@GetMapping()
 	public List<SideDish> getAllPizzas(){
 		return sdService.getAllSideDishes();
 	}
 	
-	@PostMapping("sidedish")
+	@PostMapping()
 	public SideDish addSideDish(@RequestBody SideDish sideDish) {
 		return sdService.addSideDish(sideDish);
 	}
 	
-	@GetMapping("/sidedish/id={id}")
+	@GetMapping("/{id}")
 	public SideDish getSideDish(@PathVariable long id) {
 		return sdService.getSideDish(id);
 	}
 
-	@PostMapping("/sidedish/update")
+	@PostMapping("/update")
 	public SideDish updateSideDish(@RequestBody SideDish sideDish) {
 		return sdService.updateSideDish(sideDish);
 	}
 	
-	@DeleteMapping("/sidedish/delete/id={id}")
+	@DeleteMapping("/{id}")
 	public void deleteSideDish(@PathVariable long id) {
 		sdService.deleteSideDish(id);
 	}

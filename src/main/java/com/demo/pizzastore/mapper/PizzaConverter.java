@@ -12,23 +12,23 @@ import com.demo.pizzastore.dto.PizzaDto;
 @Component
 public class PizzaConverter {
 	
-	public PizzaDto entityToDto(Pizza pizza) {
+	public PizzaDto toDto(Pizza pizza) {
 		ModelMapper mapper =new ModelMapper();
 		PizzaDto dto = mapper.map(pizza, PizzaDto.class);
 		return dto;
 	}
 	
-	public List<PizzaDto> entityToDto(List<Pizza> pizza){
-		return pizza.stream().map(i->entityToDto(i)).collect(Collectors.toList());
+	public List<PizzaDto> toDto(List<Pizza> pizza){
+		return pizza.stream().map(this::toDto).collect(Collectors.toList());
 	}
 	
-	public Pizza dtoToEntity(PizzaDto dto) {
+	public Pizza toEntity(PizzaDto dto) {
 		ModelMapper mapper = new ModelMapper();
 		Pizza order = mapper.map(dto, Pizza.class);
 		return order;
 	}
 	
-	public List<Pizza> dtoToEntity(List<PizzaDto> dto){
-		return dto.stream().map(i->dtoToEntity(i)).collect(Collectors.toList());
+	public List<Pizza> toEntity(List<PizzaDto> dto){
+		return dto.stream().map(this::toEntity).collect(Collectors.toList());
 	}
 }

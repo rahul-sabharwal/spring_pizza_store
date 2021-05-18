@@ -3,8 +3,7 @@ package com.demo.pizzastore.dto;
 import lombok.Data;
 
 @Data
-public class PizzaDto {
-	
+public class SideDish {
 	private String description;
 
 	public String getDescription() {

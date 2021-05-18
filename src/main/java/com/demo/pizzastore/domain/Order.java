@@ -35,9 +35,7 @@ public class Order {
 	private List<SideDish> sideDish = new ArrayList<>();
 	
 	
-	public Order() {
-		
-	}
+	public Order() {}
 
 	public Order(String customerName) {
 		super();

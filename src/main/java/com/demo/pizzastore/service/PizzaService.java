@@ -1,12 +1,10 @@
 package com.demo.pizzastore.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.pizzastore.domain.Item;
 import com.demo.pizzastore.domain.Pizza;
 import com.demo.pizzastore.repository.PizzaRepo;
 
@@ -45,16 +43,5 @@ public class PizzaService {
 	public void deletePizza(long id) {
 		pizzaRepo.deleteById(id);
 	}
-	
-	public Item pizzaToItem(Pizza pizza) {
-		Item item = new Pizza();
-		item = pizza;
-		return item;
-	}
-	
-	public List<Item> pizzaToItem(List<Pizza> pizza){
-		return pizza.stream().map(i -> pizzaToItem(i)).collect(Collectors.toList());
-	}
-	
 	
 }

@@ -12,38 +12,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.pizzastore.domain.Order;
+import com.demo.pizzastore.dto.OrderDto;
+import com.demo.pizzastore.mapper.OrderConverter;
 import com.demo.pizzastore.service.OrderService;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/order")
 public class OrderController {
 	
 	@Autowired
 	private OrderService orderService;
 	
+	@Autowired 
+	private OrderConverter converter;
+	
 
-	@PostMapping("/order")
-	public Order placeOrder(@RequestBody Order order) {
-		return orderService.addOrder(order);
+	@GetMapping("/all")
+	public List<OrderDto> findAllOrders(){
+		return converter.toDto(orderService.getAllOrder());
 	}
 	
-	@GetMapping("/orders")
-	public List<Order> findAllOrders(){
-		return orderService.getAllOrder();
+	@PostMapping("/")
+	public OrderDto placeOrder(@RequestBody Order order) {
+		return converter.toDto(orderService.addOrder(order));
 	}
 	
-	@GetMapping("/order/id={id}")
-	public Order getPizzaById(@PathVariable long id) {
-		return orderService.getOrder(id);
+
+//	@PostMapping("/update")
+//	public OrderDto updateOrder(@RequestBody Order order) {
+//		return converter.toDto(orderService.updateOrder(order));
+//	}
+//	
+	
+	@GetMapping("/{id}")
+	public OrderDto getOrderById(@PathVariable long id) {
+		return converter.toDto(orderService.getOrder(id));
 	}
 
-	@PostMapping("/order/update")
-	public Order updateOrder(@RequestBody Order order) {
-		return orderService.updateOrder(order);
-	}
 	
-	@DeleteMapping("/order/delete/id={id}")
+	@DeleteMapping("/{id}")
 	public void deleteOrder(@PathVariable long id) {
 		orderService.deleteOrder(id);
 	}

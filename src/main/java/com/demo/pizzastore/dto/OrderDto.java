@@ -3,8 +3,6 @@ package com.demo.pizzastore.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.demo.pizzastore.domain.Pizza;
-import com.demo.pizzastore.domain.SideDish;
 
 import lombok.Data;
 
@@ -14,6 +12,7 @@ public class OrderDto {
 	private long id;
 	private String customerName;
 	private List<ItemDto> items = new ArrayList<>();
+
 	
 	public long getId() {
 		return id;

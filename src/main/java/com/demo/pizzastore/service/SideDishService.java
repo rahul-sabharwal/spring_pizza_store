@@ -1,9 +1,7 @@
 package com.demo.pizzastore.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import com.demo.pizzastore.domain.Item;
 import com.demo.pizzastore.domain.SideDish;
 import com.demo.pizzastore.repository.SideDishRepo;
 
@@ -24,7 +22,6 @@ public class SideDishService {
 	public void deleteSideDish(long id) {
 		sdRepo.deleteById(id);
 	}
-	
 
 	public SideDish updateSideDish(SideDish sideDish) {
 		SideDish initsd = sdRepo.findById(sideDish.getId()).orElse(sideDish);
@@ -45,13 +42,4 @@ public class SideDishService {
 		return sdRepo.findAll();
 	}
 
-	public Item sdToItem(SideDish sideDish) {
-		Item item = new SideDish();
-		item = sideDish;
-		return item;
-	}
-	
-	public List<Item> sdToItem(List<SideDish> sideDish){
-		return sideDish.stream().map(i -> sdToItem(i)).collect(Collectors.toList());
-	}
 }

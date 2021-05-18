@@ -4,30 +4,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
 import com.demo.pizzastore.domain.SideDish;
-import com.demo.pizzastore.dto.SideDishDto;
 
+@Component
 public class SideDishConverter {
 
 	
-	public SideDishDto entityToDto(SideDish sideDish) {
+	public SideDish toDto(SideDish sideDish) {
 		ModelMapper mapper =new ModelMapper();
-		SideDishDto dto = mapper.map(sideDish, SideDishDto.class);
+		SideDish dto = mapper.map(sideDish, SideDish.class);
 		return dto;
 	}
 	
-	public List<SideDishDto> entityToDto(List<SideDish> pizza){
-		return pizza.stream().map(i->entityToDto(i)).collect(Collectors.toList());
+	public List<SideDish> toDto(List<SideDish> pizza){
+		return pizza.stream().map(this::toDto).collect(Collectors.toList());
 	}
 	
-	public SideDish dtoToEntity(SideDishDto dto) {
-		ModelMapper mapper = new ModelMapper();
-		SideDish sd = mapper.map(dto, SideDish.class);
-		return sd;
-	}
-	
-	public List<SideDish> dtoToEntity(List<SideDishDto> dto){
-		return dto.stream().map(i->dtoToEntity(i)).collect(Collectors.toList());
-	}
 }
