@@ -14,17 +14,19 @@ public class ItemMapper {
 
 	public ItemDto  toItemDto(SideDish sideDish) {
 		ItemDto dto = new ItemDto();
-		String desc = sideDish.getItemType().name()+":"
-				+sideDish.getSdname()+":"+sideDish.getSdquantity();
-		dto.setItem_description(desc);
+		dto.setType(sideDish.getItemType().name());
+		dto.setId(sideDish.getId());
+		String desc = sideDish.getSdquantity() + " "+ sideDish.getSdname();
+		dto.setDescription(desc);
 		return dto;
 	}
 	
 	public ItemDto  toItemDto(Pizza pizza) {
 		ItemDto dto = new ItemDto();
-		String desc = pizza.getItemType().name()+":"
-				+pizza.getCrust()+":"+pizza.getSize()+":"+pizza.getToppings();
-		dto.setItem_description(desc);
+		dto.setType(pizza.getItemType().name());
+		dto.setId(pizza.getId());
+		String desc = "A "+pizza.getSize()+" Pizza with " + pizza.getCrust() + " crust and "+ pizza.getToppings() + " topping(s).";
+		dto.setDescription(desc);
 		return dto;
 	}
 	

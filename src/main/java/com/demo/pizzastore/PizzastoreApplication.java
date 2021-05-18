@@ -23,15 +23,14 @@ public class PizzastoreApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Order order =  new Order("Raj");
+		Order order =  new Order("Raghav");
 		
-		Pizza pizza1 = new Pizza("thin","small","parmezan");
-		Pizza pizza2 = new Pizza("regular","large","pineapple");
-		Pizza pizza3 = new Pizza("thin","small","parmezan");
+		Pizza pizza1 = new Pizza("Regular","Medium","Parmezan");
+		Pizza pizza2 = new Pizza("Thin","Large","Olives");
+		Pizza pizza3 = new Pizza("Thin","Small","Jalapenos, Mushrooms");
 		
-		SideDish sideDish = new SideDish("gb",1);
-		SideDish sideDish1 = new SideDish("gbind",2);
-		SideDish sideDish2 = new SideDish("gbkknsd",3);
+		SideDish sideDish = new SideDish("Garlic Bread",1);
+		SideDish sideDish1 = new SideDish("Garlic Dip",2);
 		
 		order.getPizza().add(pizza1);
 		order.getPizza().add(pizza2);
@@ -39,7 +38,6 @@ public class PizzastoreApplication implements CommandLineRunner{
 		
 		order.getSideDish().add(sideDish);
 		order.getSideDish().add(sideDish1);
-		order.getSideDish().add(sideDish2);
 
 		orderRepo.save(order);
 

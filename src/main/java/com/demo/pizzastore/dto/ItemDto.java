@@ -1,23 +1,33 @@
 package com.demo.pizzastore.dto;
 
+
 import lombok.Data;
 
 @Data
 public class ItemDto {
 	
-	
-	private String item_description;
-
-
-	public String getItem_description() {
-		return item_description;
+	private long id;
+	private String type;
+	private String description;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public void setItem_description(String item_description) {
-		this.item_description = item_description;
-	}
-	
-	
 	
 	
 }

@@ -28,22 +28,22 @@ public class OrderController {
 	private OrderConverter converter;
 	
 
-	@GetMapping("/all")
+	@GetMapping()
 	public List<OrderDto> findAllOrders(){
 		return converter.toDto(orderService.getAllOrder());
 	}
 	
-	@PostMapping("/")
+	@PostMapping()
 	public OrderDto placeOrder(@RequestBody Order order) {
 		return converter.toDto(orderService.addOrder(order));
 	}
 	
 
-//	@PostMapping("/update")
-//	public OrderDto updateOrder(@RequestBody Order order) {
-//		return converter.toDto(orderService.updateOrder(order));
-//	}
-//	
+	@PostMapping("/{id}")
+	public OrderDto updateOrder(@RequestBody Order order) {
+		return converter.toDto(orderService.updateOrder(order));
+	}
+	
 	
 	@GetMapping("/{id}")
 	public OrderDto getOrderById(@PathVariable long id) {

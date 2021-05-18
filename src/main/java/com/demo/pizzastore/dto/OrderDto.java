@@ -9,17 +9,10 @@ import lombok.Data;
 @Data
 public class OrderDto {
 
-	private long id;
 	private String customerName;
 	private List<ItemDto> items = new ArrayList<>();
 
 	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
 	public String getCustomerName() {
 		return customerName;
 	}

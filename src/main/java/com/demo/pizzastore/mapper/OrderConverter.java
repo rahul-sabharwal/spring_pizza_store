@@ -25,7 +25,6 @@ public class OrderConverter {
                 .collect(Collectors.toList());
 		dto.setCustomerName(order.getCustomerName());
 		dto.setItems(itemDto);
-		dto.setId(order.getId());
 		return dto;
 	}
 	
