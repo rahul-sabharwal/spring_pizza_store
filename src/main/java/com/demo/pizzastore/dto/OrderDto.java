@@ -9,6 +9,13 @@ import lombok.Data;
 @Data
 public class OrderDto {
 
+	private long id;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	private String customerName;
 	private List<ItemDto> items = new ArrayList<>();
 

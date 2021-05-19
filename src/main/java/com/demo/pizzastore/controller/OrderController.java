@@ -34,7 +34,8 @@ public class OrderController {
 	}
 	
 	@PostMapping()
-	public OrderDto placeOrder(@RequestBody Order order) {
+	public OrderDto placeOrder(@RequestBody OrderDto dto) {
+		Order order = converter.toEntity(dto);
 		return converter.toDto(orderService.addOrder(order));
 	}
 	
